@@ -8,7 +8,7 @@ describe('VoiceCommandComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [VoiceCommandComponent]
+      declarations: [VoiceCommandComponent],
     });
     fixture = TestBed.createComponent(VoiceCommandComponent);
     component = fixture.componentInstance;

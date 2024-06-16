@@ -8,7 +8,7 @@ describe('CameraCaptureComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CameraCaptureComponent]
+      declarations: [CameraCaptureComponent],
     });
     fixture = TestBed.createComponent(CameraCaptureComponent);
     component = fixture.componentInstance;

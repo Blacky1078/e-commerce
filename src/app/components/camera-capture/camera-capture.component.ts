@@ -1,26 +1,27 @@
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
-
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-camera-capture',
   templateUrl: './camera-capture.component.html',
-  styleUrls: ['./camera-capture.component.css']
+  styleUrls: ['./camera-capture.component.css'],
 })
-export class CameraCaptureComponent implements AfterViewInit{
+export class CameraCaptureComponent implements AfterViewInit {
   @ViewChild('video') videoElement!: ElementRef<HTMLVideoElement>;
   @ViewChild('canvas') canvasElement!: ElementRef<HTMLCanvasElement>;
-  @ViewChild('capturedImage') capturedImageElement!: ElementRef<HTMLImageElement>;
+  @ViewChild('capturedImage')
+  capturedImageElement!: ElementRef<HTMLImageElement>;
 
   ngAfterViewInit(): void {
     this.startCamera();
   }
 
   startCamera(): void {
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(stream => {
+    navigator.mediaDevices
+      .getUserMedia({ video: true })
+      .then((stream) => {
         this.videoElement.nativeElement.srcObject = stream;
       })
-      .catch(error => {
+      .catch((error) => {
         console.error('Error accessing camera: ', error);
       });
   }
